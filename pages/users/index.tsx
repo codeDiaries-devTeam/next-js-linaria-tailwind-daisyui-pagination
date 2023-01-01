@@ -82,9 +82,12 @@ const Users = (props) => {
                   
                   <div className="card-body">
                     <h2 className="card-title mx-auto uppercase">{i.login}</h2>
-                    <p>Click the button to listen on Spotiwhy app.</p>
+                    <p>Github User</p>
                     <div className="card-actions justify-end">
+                      <a href={i.html_url}>
                       <button className="btn btn-primary">Github</button>
+                      </a>
+                      
                     </div>
                   </div>
                 </div>
