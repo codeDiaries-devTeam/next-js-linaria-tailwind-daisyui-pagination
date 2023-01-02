@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const getStaticPaths = async () => {
   const res = await fetch('https://api.github.com/users?per_page=100&since=1000');
   const data = await res.json();
@@ -25,9 +27,23 @@ export const getStaticProps = async (context) => {
   }
 }
 
+const myLoader = ({src}) => {
+  return `https://avatars.githubusercontent.com/${src}/12434574?v=4`
+}
+
 const Dynamic = (props) => {
-  console.log(props);
-  return <div>Dynamic</div>;
+  const data=props.users;
+  
+const date = new Date(data.created_at) // formated_Date - SDK returned date
+console.log(data);
+const newDate =`(${date.getFullYear()}-${date.getMonth() +1 }-${date.getDate()}) / (${date.getHours()}:${date.getMinutes()}:${date.getSeconds()})`;
+  
+  
+  
+  return <>
+  <Image className="rounded-3xl" loader={myLoader} src="u" alt="Github_Avatar" width={500} height={500}/>
+  <p>Created (Date / Hour) : {newDate}</p>
+  </>;
 };
 
 export default Dynamic;

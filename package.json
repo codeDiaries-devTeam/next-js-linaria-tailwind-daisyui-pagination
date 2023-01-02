@@ -11,7 +11,8 @@
     "next": "latest",
     "next-linaria": "^1.0.1-beta",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "use-hooks": "^2.0.0-rc.5"
   },
   "devDependencies": {
     "@linaria/babel-preset": "^4.3.2",

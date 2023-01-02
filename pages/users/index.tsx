@@ -47,41 +47,32 @@ const Users = (props) => {
     }
   });
 
-  useEffect(() => {
-    const a=setTimeout(()=>{
-      setTime(false)
-    },1000)
   
-    return () => {
-     clearTimeout(a)
-    };
-  }, []);
   
   
   return (
     <>
       <div className="mt-24"></div>
 
-      {!!time
-      ? <div>Loading</div> 
-      : <div className="container text-center p-5 mx-auto">
+      
+<div className="container text-center p-2 mx-auto">
         <div className="flex flex-row flex-wrap justify-center items-center" >
           {filteredData?.map((i: any) => {
             return (
               
-                <div key={i.id} className="card lg:w-[45%] text-center md:card-side bg-base-100 m-1 shadow-xl hover:scale-[1.05] hover:drop-shadow-2xl transition-all">
+                <div key={i.id} className="card lg:w-[49%] text-center md:card-side bg-base-100 m-1 shadow-xl hover:scale-[1.05] hover:drop-shadow-2xl transition-all">
                   <Link href={'/users/' + i.id}>
                     <figure>
                       <img
-                      className="w-[400px] h-[400px]"
+                      className=" rounded-lg w-[400px] h-[400px] lg:w-[300px] lg:h-[300px]"
                       src={i.avatar_url}
                       alt="Album"
                       />
                     </figure>
                   </Link>
                   
-                  <div className="card-body">
-                    <h2 className="card-title mx-auto uppercase">{i.login}</h2>
+                  <div className="card-body justify-center items-center">
+                    <h2 className="card-title mx-auto uppercase whitespace-pre-line break-all">{i.login}</h2>
                     <p>Github User</p>
                     <div className="card-actions justify-end">
                       <a href={i.html_url}>
@@ -170,7 +161,7 @@ const Users = (props) => {
             Next
           </button>
         </div>
-      </div> }
+      </div> 
       
     </>
   );

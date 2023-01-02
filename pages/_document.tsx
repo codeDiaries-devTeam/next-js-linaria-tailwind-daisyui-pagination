@@ -4,7 +4,7 @@ import { styled } from '@linaria/react'
 import { css } from '@linaria/core'
 export default function Document() {
   return (
-    <Html >
+    <Html data-theme="light" >
       <Head />
       <body>
         <Main />
